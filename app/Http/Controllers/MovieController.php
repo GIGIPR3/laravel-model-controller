@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-/* use app\models\movie; */
+use App\Models\Movie;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+/* use Illuminate\Support\Facades\DB; */
 
 class MovieController extends Controller
 {
@@ -12,9 +12,9 @@ class MovieController extends Controller
     public function index(){
 
     // 'select * from books'
-        $movies = Movie::all();
+        $movies = Movie::All();
 
-        dd($movies);
+        //dd($movies_all);
 
         
 
@@ -24,7 +24,7 @@ class MovieController extends Controller
         ]; */
 
 
-        return view('home');
+        return view('home', compact('movies'));
     }
 
 }
